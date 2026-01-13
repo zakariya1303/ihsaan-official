@@ -12,11 +12,16 @@
 
 *{ box-sizing:border-box; }
 html{ scroll-behavior:smooth; }
+
+/* ✅ changed: body is no longer pure white, so sections don’t show white bands */
 body{
   margin:0;
   font-family:"Plus Jakarta Sans", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
   color:var(--ink);
-  background:#fff;
+  background:
+    radial-gradient(900px 520px at 70% 20%, rgba(25,78,139,.18), transparent 60%),
+    radial-gradient(900px 520px at 20% 80%, rgba(16,43,104,.12), transparent 60%),
+    linear-gradient(180deg, rgba(7,26,67,1), rgba(11,35,90,1));
 }
 a{ color:inherit; text-decoration:none; }
 img{ max-width:100%; display:block; }
@@ -341,8 +346,19 @@ body.loaded .mobile-loader{ opacity:0; pointer-events:none; transition: opacity 
 }
 
 /* ✅ make gap smaller between Impact and Programmes */
-.impact-section{ padding-bottom: 34px; }      /* was 70 */
-.programmes-section{ padding-top: 34px; }    /* was 70 */
+.impact-section{ padding-bottom: 34px; }
+.programmes-section{ padding-top: 34px; }
+
+/* ✅ NEW: give Impact + Programmes the same dark section background (no white band) */
+.impact-section,
+.programmes-section{
+  background: linear-gradient(180deg, rgba(7,26,67,1), rgba(11,35,90,1));
+  border-top: 1px solid rgba(255,255,255,.08);
+  border-bottom: 1px solid rgba(255,255,255,.08);
+}
+.programmes-section .h2{
+  color:#fff;
+}
 
 /* Programme cards */
 .scroller{
@@ -465,7 +481,7 @@ body.loaded .mobile-loader{ opacity:0; pointer-events:none; transition: opacity 
 .num{ margin:0; font-size:52px; font-weight:900; color:#ffffff; }
 .sub{ margin:8px auto 0; color: var(--silver); font-size:13px; max-width: 32ch; }
 
-/* ✅ OUR VALUES: cleaner centered icon above text */
+/* OUR VALUES */
 .values-section{
   padding: 70px 0;
   background: linear-gradient(180deg, rgba(7,26,67,1), rgba(11,35,90,1));
@@ -496,8 +512,8 @@ body.loaded .mobile-loader{ opacity:0; pointer-events:none; transition: opacity 
   align-items:center;
 }
 .value-icon-media{
-  width: 240px;      /* consistent icon area */
-  height: 170px;     /* makes rows align */
+  width: 240px;
+  height: 170px;
   display:grid;
   place-items:center;
 }
@@ -670,6 +686,8 @@ body.loaded .mobile-loader{ opacity:0; pointer-events:none; transition: opacity 
 }
 .page-head h1{ margin:0; font-size: clamp(32px, 4vw, 52px); font-weight:900; }
 .page-body{ padding:50px 0 80px; }
+
+/* Keep inner page cards white (intentionally) */
 .card{
   background:#fff;
   border-radius:18px;
