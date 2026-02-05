@@ -393,12 +393,16 @@ body.loaded .mobile-loader{ opacity:0; pointer-events:none; transition: opacity 
   padding:22px 0 10px;
 }
 .prog-card{
+  display: flex;
+  justify-content: center; /* Centers horizontally */
+  align-items: center;     /* Centers vertically */
   flex:0 0 260px;
   height:330px;
   border-radius:14px;
   position:relative;
   overflow:hidden;
   box-shadow:var(--shadow);
+  /* justify-content: center; */
   transition: transform .14s ease, box-shadow .18s ease, filter .18s ease;
 }
 .prog-card:hover{
@@ -423,7 +427,7 @@ body.loaded .mobile-loader{ opacity:0; pointer-events:none; transition: opacity 
   inset:0;
   background: linear-gradient(180deg, rgba(0,0,0,.05), rgba(0,0,0,.62));
 }
-.prog-card .label{
+/* .prog-card .label{
   position:absolute;
   bottom:16px;
   left:16px;
@@ -431,6 +435,17 @@ body.loaded .mobile-loader{ opacity:0; pointer-events:none; transition: opacity 
   color:#fff;
   font-weight:900;
   font-size:18px;
+} */
+ .prog-card .label {
+  /* Make text pure white */
+  color: #ffffff;
+  font-weight: 700; 
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
+  position: relative;
+  z-index: 10;
+  
+  /* Optional: Add some spacing if it's too close to the edge */
+  margin-bottom: 10px;
 }
 .plus{
   position:absolute;
@@ -795,4 +810,27 @@ body.loaded .mobile-loader{ opacity:0; pointer-events:none; transition: opacity 
     border: 1px solid #bfcbda88;
     border-radius: 4px;
     display: block;
+}
+.prog-card[data-route="career-conferences"] .img {
+  background: url('images/career-conferences.png') center/cover no-repeat;
+}
+
+.prog-card[data-route="faithful-talent"] .img {
+  background: url('images/faithful_talent.png') center/cover no-repeat;
+}
+
+.prog-card[data-route="opportunities-tracker"] .img {
+  background: url('images/oppTracker.png') center/cover no-repeat;
+}
+
+.prog-card[data-route="haqqathons"] .img {
+  background: url('images/Haqqathons.png') center/cover no-repeat;
+}
+
+.prog-card[data-route="career-guides"] .img {
+  background: url('images/career-guides.png') center/cover no-repeat;
+}
+.prog-card[data-route="my-muslim-mentor"] .img {
+  /* You didn't show this file in your screenshot list, so check the filename! */
+  background: url('images/mmm.png') center/cover no-repeat;
 }
