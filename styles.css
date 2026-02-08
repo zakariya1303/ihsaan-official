@@ -909,14 +909,15 @@ body.loaded .mobile-loader{ opacity:0; pointer-events:none; transition: opacity 
   font-weight: 500;
 }
 
-.donate-strip{
+.donate-strip {
   background:#fff;
-  padding: 28px 0;
+  padding: 30px 0;   /* top & bottom padding increased */
   border-top: 1px solid rgba(16,43,104,.10);
   border-bottom: 1px solid rgba(16,43,104,.10);
 }
 
-.container-donate-inner{
+
+.container-donate-inner {
   display:flex;
   align-items:center;
   justify-content:center; 
@@ -939,6 +940,7 @@ body.loaded .mobile-loader{ opacity:0; pointer-events:none; transition: opacity 
   padding: 14px 22px;
   border-radius: 6px;
   background: linear-gradient(180deg, var(--navDark), var(--navMid), var(--navBright));
+  color: #ffffff;
   box-shadow: 0 14px 34px rgba(7,26,67,.18);
   border: 1px solid rgba(255,255,255,.16);
   font-weight:900;
